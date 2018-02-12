@@ -1,0 +1,48 @@
+ul li {
+    list-style: none;
+}
+.root span:hover {
+    font-weight: bold;
+    background: #4FFFE9;
+}
+.root span {
+    cursor: pointer;
+}
+/*.root {*/
+    /*!*background-color: #eee;*/
+    /*color: #444;*!*/
+    /*cursor: pointer;*/
+  /*!*  width: 100%;*!*/
+
+    /*!*text-align: left;*/
+    /*outline: none;*!*/
+    /*font-size: 20px;*/
+    /*transition: 0.4s;*/
+   /*!* content: '\25B7'*!*/
+
+/*}*/
+
+/*.active, .root:hover {*/
+    /*background-color: #ccc;*/
+/*}*/
+
+/*.root:after {*/
+    /*content: '\25B7';*/
+    /*!*color: #777;*/
+    /*font-weight: bold;*!*/
+    /*float: left;*/
+   /*!* margin-left: 5px;*!*/
+/*}*/
+
+/*.active:after {*/
+    /*content: "\25E2";*/
+/*}*/
+
+/*.child {
+    !*padding: 0 18px;*!
+    background-color: white;
+    max-height: 0;
+
+    overflow: hidden;
+    transition: max-height 0.2s ease-out;
+}*/

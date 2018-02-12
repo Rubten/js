@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>Home work</title>
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <style>
+        ul li {
+            list-style: none;
+        }
+        .root span:hover {
+            font-weight: bold;
+            background: #4FFFE9;
+        }
+        .root span {
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+
+<ul class="root">
+    <li><i class="material-icons">signal_cellular_null</i><i class="material-icons" style="color: yellow">folder_open</i><span>Root node 1</span>
+        <ul>
+            <li><i class="material-icons">description </i><span>Child node 1</span></li>
+            <li><i class="material-icons">description</i><span>Child node 2</span></li>
+            <li><i class="material-icons">signal_cellular_null</i><i class="material-icons" style="color: yellow">folder_open</i><span>Child-root 1</span>
+                <ul>
+                    <li><i class="material-icons">description</i><span>Child node 5</span></li>
+                </ul>
+            </li>
+
+            <li><i class="material-icons">description</i><span>Child node 4</span></li>
+        </ul>
+    </li>
+    <li><i class="material-icons">description</i><span>Root node 2</span></li>
+</ul>
+
+<script>
+    var elems = document.getElementsByTagName("ul")[0];
+    elems.onclick = function(event) {
+        var target = event.target;
+        console.log(target);
+        if (target.tagName !== 'SPAN') {
+            return;
+        }
+        var childrens = target.parentNode.getElementsByTagName('ul')[0];
+        console.log(childrens);
+        if (!childrens) return;
+        var tegs = target.parentNode.getElementsByTagName('i');
+        if (childrens.hidden) {
+            var txt1 = document.createTextNode("signal_cellular_null");
+            var txt2 = document.createTextNode("folder_open");
+            tegs[0].replaceChild(txt1, tegs[0].childNodes[0]);
+            tegs[1].replaceChild(txt2, tegs[1].childNodes[0]);
+            childrens.hidden = !childrens.hidden;
+        }else{
+            var txt1_1 = document.createTextNode("network_cell");
+            var txt2_1 = document.createTextNode("folder");
+            tegs[0].replaceChild(txt1_1, tegs[0].childNodes[0]);
+            tegs[1].replaceChild(txt2_1, tegs[1].childNodes[0]);
+            childrens.hidden = !childrens.hidden;
+        }
+    }
+</script>
+</body>

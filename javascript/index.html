@@ -1,0 +1,261 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Home work</title>
+</head>
+<body>
+<!--<script src="test.js"></script>-->
+
+<!--<script>
+    function table(col, row) {
+
+        var my_body = document.getElementsByTagName("body")[0];
+        var my_table = document.createElement("table");
+
+        for (var tr = 0; tr < row; tr++) {
+            var row_table = document.createElement("tr");
+            for (var td = 0; td < col; td++) {
+                var col_table = document.createElement("td");
+                var txt = document.createTextNode("index cell is: " + "[" + tr + "]" + "[" + td + "]");
+                col_table.appendChild(txt);
+                row_table.appendChild(col_table);
+
+                if ((tr + td) % 2 === 0) {
+                    col_table.style.background = "black";
+                    col_table.style.color = "white";
+                } else {
+                    col_table.style.background = "red";
+                }
+            }
+            my_table.appendChild(row_table);
+        }
+
+        my_body.appendChild(my_table);
+    }
+
+    table(8, 10)
+</script>-->
+
+
+<!--<form name="search">
+    <label>Search by site:
+        <input name="search" type="text">
+    </label>
+    <input value="Искать!" type="submit">
+</form>
+
+<hr>
+
+<form name="search-person">
+    Search by persons:
+    <table id="age-table">
+        <tbody>
+        <tr>
+            <td>Age:</td>
+            <td id="age-list">
+                <label>
+                    <input name="age" value="young" type="radio">to 18</label>
+                <label>
+                    <input name="age" value="mature" type="radio">18-50</label>
+                <label>
+                    <input name="age" value="senior" type="radio">more 50</label>
+            </td>
+        </tr>
+
+        <tr>
+            <td>Extra:</td>
+            <td>
+                <input name="info[0]" type="text">
+                <input name="info[1]" type="text">
+                <input name="info[2]" type="text">
+            </td>
+        </tr>
+
+        </tbody>
+    </table>
+
+    <input value="Искать!" type="submit">
+</form>-->
+
+<!--<input type="text"> oninput: <span id="result"></span>
+<script>
+    var input = document.body.children[0];
+
+    input.oninput = function() {
+        alert(input.value);
+    };
+</script>-->
+
+
+<!--<script>
+
+    // 1
+    document.getElementById('age-table').getElementsByTagName('label');
+
+    // 2
+    document.getElementById('age-table').getElementsByTagName('td')[0];
+    /*var result = document.querySelector('#age-table td');*/
+
+    // 3
+    document.getElementsByTagName('form')[1];
+
+    // 4
+    document.querySelector('form[name="search"]');
+
+    // 5
+    document.querySelector('form[name="search"] input')
+
+    // 6
+    document.getElementsByName("info[0]")[0];
+
+    // 7
+    document.querySelector('form[name="search-person"] [name="info[0]"]');
+
+</script>-->
+
+<form id="send_message" onsubmit="console_log_all();return false">
+    <table>
+        <tr>
+            <td>
+                <label>
+                    Login:
+                    <input name="login" type="text" placeholder="Your name">
+                </label>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <label>
+                    Password:
+                    <input name="pass" type="password" placeholder="Your password">
+                </label>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                Your age:
+                <label>
+                    <input name="age" value="young" type="radio">to 18</label>
+                <label>
+                    <input name="age" value="mature" type="radio">18-50</label>
+                <label>
+                    <input name="age" value="senior" type="radio">more 50</label>
+            </td>
+        </tr>
+
+        <tr>
+            <td>
+                You are interested in what language(s):
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <label>
+                    <input name="lang" value="PHP" type="checkbox">PHP</label>
+                <label>
+                    <input name="lang" value="JavaScript" type="checkbox">JavaScript</label>
+                <label>
+                    <input name="lang" value="SQL" type="checkbox">SQL</label>
+            </td>
+        </tr>
+
+
+        <tr>
+            <td>To whom:</td>
+        </tr>
+        <tr>
+            <td>
+                <select name="person" >
+                    <option value="1">Manager</option>
+                    <option value="2">Developer</option>
+                    <option value="3">Customer</option>
+                    <option value="4">Tester</option>
+                </select>
+            </td>
+        </tr>
+
+        <tr>
+            <td>
+                Message:
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <textarea name="message" placeholder="Text..."></textarea>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <input type="submit" value="Send">
+            </td>
+        </tr>
+    </table>
+
+</form>
+
+<script>
+    var form = document.forms[0];
+    var input_login = form.elements.login;
+    var input_pass = form.elements.pass;
+    var input_message = form.elements.message;
+
+    function console_form_elems_input_text(input_val) {
+        console.log(input_val.value);
+    }
+
+
+    function colsole_form_elems_select() {
+        var select = form.elements.person;
+        for (var i = 0; i < select.options.length; i++) {
+            var option = select.options[i];
+            if (option.selected) {
+                console.log(option.textContent);
+            }
+        }
+    }
+
+
+    var check_boxes = form.elements.lang;
+    var check_radio = form.elements.age;
+
+    function get_checked_value(val) {
+        for (var i = 0; i < val.length; i++) {
+            if (val[i].checked) {
+                console.log(val[i].value);
+            }
+        }
+        return '';
+    }
+
+    var in_login = form.elements.login;
+    var in_message = form.elements.message;
+    /*get_elem(in_login);
+    get_elem(in_message);*/
+
+    function get_elem(enter) {
+        enter.onkeyup = my_alert;
+        enter.oninput = my_alert;
+        enter.onpropertychange = function () {
+            event.propertyName == "value" && my_alert(this);
+        }
+
+        function my_alert(elem) {
+            alert(this.value);
+        }
+        return '';
+    }
+
+    function console_log_all() {
+        console_form_elems_input_text(input_login);
+        console_form_elems_input_text(input_pass);
+        get_checked_value(check_radio);
+        get_checked_value(check_boxes);
+        colsole_form_elems_select();
+        console_form_elems_input_text(input_message);
+    }
+
+</script>
+
+</body>
+</html>
